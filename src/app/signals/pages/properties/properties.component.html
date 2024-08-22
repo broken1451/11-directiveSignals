@@ -1,0 +1,35 @@
+<h1>Mutaciones</h1>
+<hr>
+
+<div class="row">
+
+    <div class="col-6">
+        <!-- <input (input)="onFieldUpdated2($event)" #txtEmail type="text" class="form-control mb-2">
+
+        <input (input)="onFieldUpdated2($event)" #txtfirst_name type="text"
+            class="form-control mb-2">
+
+        <input (input)="onFieldUpdated2($event)" #txtlast_name type="text"
+            class="form-control mb-2"> -->
+
+        <input (input)="onFieldUpdated('email' ,txtEmail.value)" [value]="user().email" #txtEmail type="text" class="form-control mb-2">
+
+        <input (input)="onFieldUpdated('first_name' ,txtfirst_name.value)" [value]="user().first_name" #txtfirst_name type="text"
+            class="form-control mb-2">
+
+        <input (input)="onFieldUpdated('last_name' ,txtlast_name.value)" [value]="user().last_name" #txtlast_name type="text"
+            class="form-control mb-2">
+    </div>
+
+    <div class="col-6">
+        <!-- data del usuario -->
+        <pre>
+            {{user() | json}}
+         </pre>
+
+         {{fullName()}}
+
+         <button type="button" class="btn btn-primary" (click)="inncreseBy(+1)">+1</button>
+    </div>
+
+</div>

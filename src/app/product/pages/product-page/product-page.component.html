@@ -1,0 +1,26 @@
+<h1>Agregar Producto</h1>
+<hr>
+<form novalidate autocomplete="off" [formGroup]="form">
+    <div class="row g3 aliign-items-center mb-3">
+        <div class="col-auto">
+            <label for="name" class="col-form-label">Nombre</label>
+        </div>
+        <div class="col-auto">
+            <input type="text" class="form-control" id="name" name="name" formControlName="name">
+        </div>
+        <div class="col-auto">
+            <span appCustomLabelDirective [color]="color" [errors]="form.get('name')?.errors"> temporal</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary" type="submit" (click)="changeColor()">Cambiar Color</button>
+        </div>
+    </div>
+</form>
+
+<pre class="mt-5">
+   {{ form.get('name')?.errors | json }}
+</pre>
+
+<p>Color: {{color}}</p>
